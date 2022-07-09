@@ -34,7 +34,7 @@ namespace DapperCrud.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<List<Product>>> GetAllProduct(Product product)
+        public async Task<ActionResult<List<Product>>> CreateProduct(Product product)
         {
             using var connection = new SqlConnection(_config.GetConnectionString("NortwindConn"));
             await connection.ExecuteAsync("insert into Products(ProductName, QuantityPerUnit, UnitPrice) values (@ProductName, QuantityPerUnit, UnitPrice)",product);
